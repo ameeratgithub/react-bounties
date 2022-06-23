@@ -6,3 +6,30 @@
     border: 0 solid #e5e7eb;
     box-sizing: border-box;
 }
+
+.open .header{
+    border-color: rgb(196, 196, 196);
+}
+.assigned .header{
+    border-color: rgb(95, 113, 212);
+}
+.under-review .header{
+    border-color: rgb(165, 22, 185);
+}
+.closed .header{
+    border-color: rgb(6, 219, 172);
+}
+.open .footer{
+    color: rgb(31,31,31);
+    background-color: rgb(196, 196, 196);
+}
+.assigned .footer{
+    background-color: rgb(95, 113, 212);
+}
+.under-review .footer{
+    background-color: rgb(165, 22, 185);
+}
+.closed .footer{
+    background-color: rgb(6, 219, 172);
+}
+

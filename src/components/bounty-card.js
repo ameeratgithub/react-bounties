@@ -1,6 +1,6 @@
 import { Draggable } from "react-beautiful-dnd"
 
-function BountyCard({ bounty, footerBgColor, footerTextColor, index }) {
+function BountyCard({ bounty, index }) {
 
     return <Draggable draggableId={bounty.id} index={index}>
         {
@@ -11,8 +11,7 @@ function BountyCard({ bounty, footerBgColor, footerTextColor, index }) {
                     <p className="px-5 mb-4 text-sm">
                         {bounty.content}
                     </p>
-                    <div className="flex text-[13px] font-semibold justify-between items-center  px-5  py-2"
-                        style={{ backgroundColor: footerBgColor, color: footerTextColor }}>
+                    <div className="flex text-[13px] font-semibold justify-between items-center  px-5  py-2 footer">
                         <div>Reward: ${bounty.reward}</div>
                         <div>Time Left: ${bounty.daysLeft} days</div>
                     </div>

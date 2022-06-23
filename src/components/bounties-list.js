@@ -7,9 +7,6 @@ import BountyHeader from "./bounty-header"
 function BountiesList() {
 
     const [bounties, setBounties] = useState([])
-    // const [assignedBounties, setAssignedBounties] = useState([])
-    // const [underReviewBounties, setUnderReviewBounties] = useState([])
-    // const [closedBounties, setClosedBounties] = useState([])
 
     useEffect(() => {
         populateBounties()
@@ -55,25 +52,21 @@ function BountiesList() {
 
     return <DragDropContext onDragEnd={handleDragEnd}>
         <div className="grid grid-cols-4 gap-4">
-            <div>
-                <BountyHeader borderColor='rgb(196, 196, 196)' text={`Open Bounties`} />
-                <BountyColumn bounties={bounties.open} id="open" footerBgColor='rgb(196, 196, 196)'
-                    footerTextColor='rgb(31,31,31)' />
+            <div className="open">
+                <BountyHeader text={`Open Bounties`} />
+                <BountyColumn bounties={bounties.open} id="open" />
             </div>
-            <div>
-                <BountyHeader borderColor='rgb(95, 113, 212)' text={`Assigned / IN Progress`} />
-                <BountyColumn bounties={bounties.assigned} id="assigned" footerBgColor='rgb(95, 113, 212)'
-                    footerTextColor='white' />
+            <div className="assigned">
+                <BountyHeader text={`Assigned / IN Progress`} />
+                <BountyColumn bounties={bounties.assigned} id="assigned" />
             </div>
-            <div>
-                <BountyHeader borderColor='rgb(165, 22, 185)' text={`Under Review`} />
-                <BountyColumn bounties={bounties.underReview} id="underReview" footerBgColor='rgb(165, 22, 185)'
-                    footerTextColor='white' />
+            <div className="under-review">
+                <BountyHeader  text={`Under Review`} />
+                <BountyColumn bounties={bounties.underReview} id="underReview"/>
             </div>
-            <div>
-                <BountyHeader borderColor='rgb(6, 219, 172)' text={`Closed / Rewarded`} />
-                <BountyColumn bounties={bounties.closed} id="closed" footerBgColor='rgb(6, 219, 172)'
-                    footerTextColor='white' />
+            <div className="closed">
+                <BountyHeader text={`Closed / Rewarded`} />
+                <BountyColumn bounties={bounties.closed} id="closed" />
             </div>
         </div>
     </DragDropContext>
